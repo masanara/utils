@@ -1,5 +1,5 @@
 FROM alpine
-RUN mkdir /run/nginx && apk add --update --no-cache curl nginx bind-tools bash && ln -sf /dev/stdout /var/log/nginx/access.log
+RUN mkdir /run/nginx && apk add --update --no-cache curl nginx bind-tools bash && ln -sf /dev/stdout /var/log/nginx/access.log && ln -s ln -sf /dev/stderr /var/log/nginx/error.log
 RUN chown -R nginx:nginx /var/log/nginx && chown -R nginx:nginx /run/nginx
 RUN rm /etc/nginx/conf.d/*
 ADD hello.conf /etc/nginx/conf.d
