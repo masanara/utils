@@ -8,6 +8,6 @@ ADD hello.png /etc/nginx/conf.d
 ADD index.html /usr/share/nginx/html/
 RUN addgroup nginx wheel
 RUN echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-USER 100
-EXPOSE 8080
+#USER 100
+EXPOSE 80
 CMD [ "/usr/sbin/nginx","-c","/etc/nginx/nginx.conf"]
